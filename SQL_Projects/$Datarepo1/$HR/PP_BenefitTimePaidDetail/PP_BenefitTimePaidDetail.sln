@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PP_BenefitTimePaidDetail", "PP_BenefitTimePaidDetail\PP_BenefitTimePaidDetail.rptproj", "{571F5707-6A02-4CF4-AB56-D88394BA499D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{571F5707-6A02-4CF4-AB56-D88394BA499D}.Debug|Default.ActiveCfg = Debug
+		{571F5707-6A02-4CF4-AB56-D88394BA499D}.Debug|Default.Build.0 = Debug
+		{571F5707-6A02-4CF4-AB56-D88394BA499D}.Debug|Default.Deploy.0 = Debug
+		{571F5707-6A02-4CF4-AB56-D88394BA499D}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{571F5707-6A02-4CF4-AB56-D88394BA499D}.DebugLocal|Default.Build.0 = DebugLocal
+		{571F5707-6A02-4CF4-AB56-D88394BA499D}.Release|Default.ActiveCfg = Release
+		{571F5707-6A02-4CF4-AB56-D88394BA499D}.Release|Default.Build.0 = Release
+		{571F5707-6A02-4CF4-AB56-D88394BA499D}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

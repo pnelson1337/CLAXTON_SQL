@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "MHU_AdmissionsDischarges", "MHU_AdmissionsDischarges\MHU_AdmissionsDischarges.rptproj", "{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}.Debug|Default.ActiveCfg = Debug
+		{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}.Debug|Default.Build.0 = Debug
+		{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}.Debug|Default.Deploy.0 = Debug
+		{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}.DebugLocal|Default.Build.0 = DebugLocal
+		{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}.Release|Default.ActiveCfg = Release
+		{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}.Release|Default.Build.0 = Release
+		{C8514069-B6A6-4BBC-ACF1-9E9E1D657052}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

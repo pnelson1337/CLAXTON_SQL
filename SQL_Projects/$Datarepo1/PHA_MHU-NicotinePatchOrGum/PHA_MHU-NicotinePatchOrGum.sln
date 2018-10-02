@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PHA_MHU-NicotinePatchOrGum", "PHA_MHU-NicotinePatchOrGum\PHA_MHU-NicotinePatchOrGum.rptproj", "{E0B7AD29-8CE7-419C-A06E-40FEB2211102}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0B7AD29-8CE7-419C-A06E-40FEB2211102}.Debug|Default.ActiveCfg = Debug
+		{E0B7AD29-8CE7-419C-A06E-40FEB2211102}.Debug|Default.Build.0 = Debug
+		{E0B7AD29-8CE7-419C-A06E-40FEB2211102}.Debug|Default.Deploy.0 = Debug
+		{E0B7AD29-8CE7-419C-A06E-40FEB2211102}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{E0B7AD29-8CE7-419C-A06E-40FEB2211102}.DebugLocal|Default.Build.0 = DebugLocal
+		{E0B7AD29-8CE7-419C-A06E-40FEB2211102}.Release|Default.ActiveCfg = Release
+		{E0B7AD29-8CE7-419C-A06E-40FEB2211102}.Release|Default.Build.0 = Release
+		{E0B7AD29-8CE7-419C-A06E-40FEB2211102}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

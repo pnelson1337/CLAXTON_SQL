@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PHQ9Performed-TENPLUS-PrimaryCareOnly", "PHQ9Performed-TENPLUS-PrimaryCareOnly\PHQ9Performed-TENPLUS-PrimaryCareOnly.rptproj", "{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}.Debug|Default.ActiveCfg = Debug
+		{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}.Debug|Default.Build.0 = Debug
+		{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}.Debug|Default.Deploy.0 = Debug
+		{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}.DebugLocal|Default.Build.0 = DebugLocal
+		{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}.Release|Default.ActiveCfg = Release
+		{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}.Release|Default.Build.0 = Release
+		{EF3ED9D0-68F4-4BA7-B43B-530E4F40062C}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

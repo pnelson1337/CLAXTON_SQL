@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PP_EmployeesByStatusAndDate", "PP_EmployeesByStatusAndDate\PP_EmployeesByStatusAndDate.rptproj", "{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}.Debug|Default.ActiveCfg = Debug
+		{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}.Debug|Default.Build.0 = Debug
+		{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}.Debug|Default.Deploy.0 = Debug
+		{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}.DebugLocal|Default.Build.0 = DebugLocal
+		{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}.Release|Default.ActiveCfg = Release
+		{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}.Release|Default.Build.0 = Release
+		{D7AF012A-00A2-4AAA-BA24-D4CC550E4A72}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

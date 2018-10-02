@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ADM_ALCSWINGBED", "ADM_ALCSWINGBED\ADM_ALCSWINGBED.rptproj", "{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}.Debug|Default.ActiveCfg = Debug
+		{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}.Debug|Default.Build.0 = Debug
+		{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}.Debug|Default.Deploy.0 = Debug
+		{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}.DebugLocal|Default.Build.0 = DebugLocal
+		{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}.Release|Default.ActiveCfg = Release
+		{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}.Release|Default.Build.0 = Release
+		{18C1D4B1-8AE6-4617-A4D0-FEE768B6439E}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

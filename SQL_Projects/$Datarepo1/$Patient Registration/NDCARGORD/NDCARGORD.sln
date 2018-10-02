@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "NDCARGORD", "Report Project2\NDCARGORD.rptproj", "{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}.Debug|Default.ActiveCfg = Debug
+		{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}.Debug|Default.Build.0 = Debug
+		{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}.Debug|Default.Deploy.0 = Debug
+		{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}.DebugLocal|Default.Build.0 = DebugLocal
+		{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}.Release|Default.ActiveCfg = Release
+		{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}.Release|Default.Build.0 = Release
+		{18DF3D77-FFC4-4FDC-9779-43731CD8B3BF}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
