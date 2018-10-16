@@ -118,6 +118,115 @@ ORDER BY Name</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>DATAREPO1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@DAY">
+            <Value>=Parameters!DAY.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT
+AV.Name
+
+,CONVERT(VARCHAR(10),BV.AdmitDateTime,101)														AS 'Admit Date'
+,CONVERT(VARCHAR(5),BV.AdmitDateTime,108)														AS 'Admit Time'
+,ISNULL(CONVERT(VARCHAR(5),FIRSTAM.DateTime,108),'')											AS '3AM CHECK'
+,ISNULL(CONVERT(VARCHAR(5),SECONDAM.DateTime,108),'')											AS '7AM CHECK'
+,ISNULL(CONVERT(VARCHAR(5),THIRDAM.DateTime,108),'')											AS '11AM CHECK'
+,ISNULL(CONVERT(VARCHAR(5),FIRSTPM.DateTime,108),'')											AS '3PM CHECK'
+,ISNULL(CONVERT(VARCHAR(5),SECONDPM.DateTime,108),'')											AS '7PM CHECK'
+,ISNULL(CONVERT(VARCHAR(5),THIRDPM.DateTime,108),'')											AS '11PM CHECK'
+--,AV.VisitID
+
+
+FROM		[Livedb].[dbo].[AdmVisits]									AS AV
+LEFT JOIN	[Livedb].[dbo].[BarVisits]									AS BV ON AV.VisitID=BV.VisitID
+LEFT JOIN (SELECT MAX(NQR.DateTime) AS 'DateTime', NQR.VisitID
+			FROM [Livedb].[dbo].[NurQueryResults]						AS NQR
+			WHERE  DATEPART(hh,NQR.DateTime) &gt;= 00 AND DATEPART(hh,NQR.DateTime) &lt;= 04
+			AND CAST(NQR.DateTime AS DATE) = CAST(GETDATE()-@DAY AS DATE)		  
+			  AND NQR.QueryID='CCPAIN066'
+			  GROUP BY NQR.VisitID)								AS FIRSTAM			ON AV.VisitID=FIRSTAM.VisitID
+			  
+LEFT JOIN (SELECT MAX(NQR.DateTime) AS 'DateTime', NQR.VisitID
+			FROM [Livedb].[dbo].[NurQueryResults]						AS NQR
+			WHERE  DATEPART(hh,NQR.DateTime) &gt;= 05 AND DATEPART(hh,NQR.DateTime) &lt;= 09
+			AND CAST(NQR.DateTime AS DATE) = CAST(GETDATE()-@DAY AS DATE)		  
+			  AND NQR.QueryID='CCPAIN066'
+			  GROUP BY NQR.VisitID)								AS SECONDAM			ON AV.VisitID=SECONDAM.VisitID
+			  
+LEFT JOIN (SELECT MAX(NQR.DateTime) AS 'DateTime', NQR.VisitID
+			FROM [Livedb].[dbo].[NurQueryResults]						AS NQR
+			WHERE  DATEPART(hh,NQR.DateTime) &gt;= 10 AND DATEPART(hh,NQR.DateTime) &lt;= 12
+			AND CAST(NQR.DateTime AS DATE) = CAST(GETDATE()-@DAY AS DATE)		  
+			  AND NQR.QueryID='CCPAIN066'
+			  GROUP BY NQR.VisitID)								AS THIRDAM			ON AV.VisitID=THIRDAM.VisitID
+
+LEFT JOIN (SELECT MAX(NQR.DateTime) AS 'DateTime', NQR.VisitID
+			FROM [Livedb].[dbo].[NurQueryResults]						AS NQR
+			WHERE  DATEPART(hh,NQR.DateTime) &gt;= 12 AND DATEPART(hh,NQR.DateTime) &lt;= 17
+			AND CAST(NQR.DateTime AS DATE) = CAST(GETDATE()-@DAY AS DATE)		  
+			  AND NQR.QueryID='CCPAIN066'
+			  GROUP BY NQR.VisitID)								AS FIRSTPM			ON AV.VisitID=FIRSTPM.VisitID
+
+LEFT JOIN (SELECT MAX(NQR.DateTime) AS 'DateTime', NQR.VisitID
+			FROM [Livedb].[dbo].[NurQueryResults]						AS NQR
+			WHERE  DATEPART(hh,NQR.DateTime) &gt;= 18 AND DATEPART(hh,NQR.DateTime) &lt;= 21
+			AND CAST(NQR.DateTime AS DATE) = CAST(GETDATE()-@DAY AS DATE)		  
+			  AND NQR.QueryID='CCPAIN066'
+			  GROUP BY NQR.VisitID)								AS SECONDPM			ON AV.VisitID=SECONDPM.VisitID
+
+LEFT JOIN (SELECT MAX(NQR.DateTime) AS 'DateTime', NQR.VisitID
+			FROM [Livedb].[dbo].[NurQueryResults]						AS NQR
+			WHERE  DATEPART(hh,NQR.DateTime) &gt;= 22 AND DATEPART(hh,NQR.DateTime) &lt;= 24
+			AND CAST(NQR.DateTime AS DATE) = CAST(GETDATE()-@DAY AS DATE)		  
+			  AND NQR.QueryID='CCPAIN066'
+			  GROUP BY NQR.VisitID)								AS THIRDPM			ON AV.VisitID=THIRDPM.VisitID
+
+WHERE AV.LocationID='3RD'
+AND AV.Status='ADM IN'
+ORDER BY Name</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Admit_Date">
+          <DataField>Admit Date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Admit_Time">
+          <DataField>Admit Time</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID3AM_CHECK">
+          <DataField>3AM CHECK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID7AM_CHECK">
+          <DataField>7AM CHECK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID11AM_CHECK">
+          <DataField>11AM CHECK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID3PM_CHECK">
+          <DataField>3PM CHECK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID7PM_CHECK">
+          <DataField>7PM CHECK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID11PM_CHECK">
+          <DataField>11PM CHECK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -1234,7 +1343,7 @@ ORDER BY Name</CommandText>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>DataSet2</DataSetName>
             <Top>0.43in</Top>
             <Height>0.68in</Height>
             <Width>11in</Width>
@@ -1255,10 +1364,28 @@ ORDER BY Name</CommandText>
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="DAY">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DAY</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>DAY</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <Language>en-US</Language>

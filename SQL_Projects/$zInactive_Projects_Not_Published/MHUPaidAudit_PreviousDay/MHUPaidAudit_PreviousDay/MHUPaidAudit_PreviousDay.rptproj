@@ -5,8 +5,8 @@
   <DataSets />
   <Reports>
     <ProjectItem>
-      <Name>MHUPaidAudit_PreviousDay.rdl</Name>
-      <FullPath>MHUPaidAudit_PreviousDay.rdl</FullPath>
+      <Name>MHUPaidAudit.rdl</Name>
+      <FullPath>MHUPaidAudit.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
@@ -17,11 +17,11 @@
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
         <TargetServerURL>http://datarepo1/ReportServer</TargetServerURL>
-        <TargetFolder>Subscriptions</TargetFolder>
+        <TargetFolder>Mental Health</TargetFolder>
         <TargetMobileReportFolder>Mobile Reports</TargetMobileReportFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
-        <StartItem>MHUPaidAudit_PreviousDay.rdl</StartItem>
+        <StartItem>MHUPaidAudit.rdl</StartItem>
       </Options>
     </Configuration>
     <Configuration>

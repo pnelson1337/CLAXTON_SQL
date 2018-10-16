@@ -457,7 +457,7 @@ WHERE        ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('COMFOR
 AV.VisitID = CCORD.VisitID
 
 WHERE AV.LocationID NOT IN ('3RD','OB','NSY')
-AND DATEDIFF(DAY,BV.AdmitDateTime,GETDATE()) &gt;= @LOS
+AND DATEDIFF(DAY,BV.AdmitDateTime,BV.DischargeDateTime) &gt;= @LOS
 AND DATEDIFF(DAY,BV.DischargeDateTime,GETDATE()) &lt;= @DISDAYS
 AND ALCORD.OrderedProcedureMnemonic IS NULL
 AND SWINGORD.OrderedProcedureMnemonic IS NULL
@@ -561,7 +561,6 @@ ORDER BY LOS</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Left>0in</Left>
             <Height>0.43in</Height>
             <Width>13.21877in</Width>
             <Style>
@@ -1231,7 +1230,6 @@ ORDER BY LOS</CommandText>
             </TablixRowHierarchy>
             <DataSetName>OBS48HR</DataSetName>
             <Top>2.69972in</Top>
-            <Left>0in</Left>
             <Height>0.61458in</Height>
             <Width>9.70834in</Width>
             <ZIndex>1</ZIndex>
@@ -1263,7 +1261,6 @@ ORDER BY LOS</CommandText>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
             <Top>2.13083in</Top>
-            <Left>0in</Left>
             <Height>0.49944in</Height>
             <Width>13.21877in</Width>
             <ZIndex>2</ZIndex>
@@ -1970,8 +1967,8 @@ ORDER BY LOS</CommandText>
             </TablixRowHierarchy>
             <DataSetName>LOS_UPDATED</DataSetName>
             <Top>0.48556in</Top>
-            <Height>0.44389in</Height>
-            <Width>13.32294in</Width>
+            <Height>0.4439in</Height>
+            <Width>13.32295in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -2676,7 +2673,7 @@ ORDER BY LOS</CommandText>
             <DataSetName>LOS_DIS</DataSetName>
             <Top>1.49875in</Top>
             <Height>0.5in</Height>
-            <Width>13.32294in</Width>
+            <Width>13.32295in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
