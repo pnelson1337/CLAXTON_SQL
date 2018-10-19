@@ -3,155 +3,154 @@
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="datarepo1">
+    <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=datarepo1;Initial Catalog=Livedb</ConnectString>
+        <ConnectString>Data Source=DATAREPO1;Initial Catalog=Livedb</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>3dc9894c-ea20-4293-9b65-b366e20d9e6b</rd:DataSourceID>
+      <rd:DataSourceID>0edf03ce-cb02-4921-8af1-c3a2cb04dfa0</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="PrimaryQuery">
       <Query>
-        <DataSourceName>datarepo1</DataSourceName>
+        <DataSourceName>DataSource1</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@Response">
-            <Value>=Parameters!Response.Value</Value>
+          <QueryParameter Name="@STARTDATE">
+            <Value>=Parameters!STARTDATE.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Location">
-            <Value>=Parameters!Location.Value</Value>
+          <QueryParameter Name="@ENDDATE">
+            <Value>=Parameters!ENDDATE.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@StartDate">
-            <Value>=Parameters!StartDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@EndDate">
-            <Value>=Parameters!EndDate.Value</Value>
+          <QueryParameter Name="@LOCATION">
+            <Value>=Parameters!LOCATION.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>
-          SELECT * FROM (
+        <CommandText>SELECT
 
-          SELECT
-          BV.AccountNumber
-          ,BV.Name
-          ,ISNULL(CONVERT(VARCHAR(10),BV.AdmitDateTime,101),
-          CONVERT(VARCHAR(10),BV.ServiceDateTime,101))										AS 'Admit/Service Date'
-          ,ISNULL(CONVERT(VARCHAR(10),BV.DischargeDateTime,101),'')									AS 'Discharge Date'
-          --,ISNULL(RESPONSE.Response,'')																AS 'Response'
-          ,CASE WHEN RESPONSE.Response IS NULL THEN 'N'
-          ELSE RESPONSE.Response END															AS 'Response'
-          ,AV.LocationID																				AS 'Location'
-          ,AV.Status
-          ,DISDISPO.Name																				AS 'Dispo Name'
+SA.VisitID
 
 
-
-          FROM			[Livedb].[dbo].[AdmVisits]													AS AV
-          INNER JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON AV.VisitID=BV.VisitID
-          LEFT JOIN		[Livedb].[dbo].[AdmVisitQueries]											AS INST										ON AV.VisitID=INST.VisitID AND INST.QueryID = 'INST'
-          LEFT JOIN		[Livedb].[dbo].[AdmPatDischargePlanData]									AS DISPO									ON BV.VisitID=DISPO.VisitID
-          LEFT JOIN		[Livedb].[dbo].[DMisDischargeDisposition]									AS DISDISPO									ON DISPO.DispositionID=DISDISPO.DispositionID AND DISDISPO.Active='Y'
-          LEFT JOIN		(SELECT NQR.VisitID,Response,MAX(NQR.DateTime)								AS 'MAX DATE'
-          FROM [Livedb].[dbo].[NurQueryResults]									AS NQR
-          WHERE NQR.QueryID='CMIDT037'
-          GROUP BY NQR.VisitID,NQR.Response)										AS RESPONSE									ON BV.VisitID=RESPONSE.VisitID
-          -----------------------------------------------------------------------------START ORDER SELECTIONS-------------------------------------------------------------------------------
-          -- LAST ORDER --
-          LEFT JOIN		(SELECT * FROM(SELECT
-          ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-          ,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-          ,ORD.VisitID
-          FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-          INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-          WHERE ORD.Status != 'CANCEL'
-          )																							AS X
-          WHERE X.OrderSeq='1')																		AS ORD										ON AV.VisitID=ORD.VisitID
-
-          -- SWING ORDER --
-          LEFT JOIN (SELECT
-          ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-          ,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-          ,ORD.VisitID,ORD.OrderedProcedureMnemonic,AV.AccountNumber,BV.AdmitDateTime
-          FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-          LEFT JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON ORD.VisitID=BV.VisitID
-          LEFT JOIN		[Livedb].[dbo].[AdmVisits]													AS AV										ON ORD.VisitID=AV.VisitID
-          INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-          WHERE ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('INPTSWG','INPTSWGREC'))	AS SWINGORD									ON AV.VisitID=SWINGORD.VisitID
-
-          -- OBS ORDER --
-          LEFT JOIN (SELECT
-          ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-          ,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-          ,ORD.VisitID,ORD.OrderedProcedureMnemonic,AV.AccountNumber,BV.AdmitDateTime
-          FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-          LEFT JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON ORD.VisitID=BV.VisitID
-          LEFT JOIN		[Livedb].[dbo].[AdmVisits]													AS AV										ON ORD.VisitID=AV.VisitID
-          INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-          WHERE ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('OBSERVICU','OBSERVMS','OBSERVOB'))									AS OBSORD									ON AV.VisitID=OBSORD.VisitID
-
-          -- ALC ORDER --
-          LEFT JOIN (SELECT
-          ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-          ,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-          ,ORD.VisitID,ORD.OrderedProcedureMnemonic,AV.AccountNumber,BV.AdmitDateTime
-          FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-          LEFT JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON ORD.VisitID=BV.VisitID
-          LEFT JOIN		[Livedb].[dbo].[AdmVisits]													AS AV										ON ORD.VisitID=AV.VisitID
-          INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-          WHERE ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('ALC'))					AS ALCORD									ON AV.VisitID=ALCORD.VisitID
-
-          -- COMFORT CARE ORDER --
-          LEFT JOIN (SELECT
-          ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-          ,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-          ,ORD.VisitID,ORD.OrderedProcedureMnemonic,AV.AccountNumber,BV.AdmitDateTime
-          FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-          LEFT JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON ORD.VisitID=BV.VisitID
-          LEFT JOIN		[Livedb].[dbo].[AdmVisits]													AS AV										ON ORD.VisitID=AV.VisitID
-          INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-          WHERE ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('COMFORT'))				AS CCORD									ON AV.VisitID=CCORD.VisitID
-
-          -------------------------------------------------------------------------------END ORDER SELECTIONS-------------------------------------------------------------------------------
+,AV.AccountNumber
+,AV.Name
+,AV.PrimaryInsuranceID
+,CONVERT(VARCHAR(10),SA.DateTime,101)													AS 'Appointment Date'
+,CONVERT(VARCHAR(10),ORIGBOOK.ActualEventDateTime,101)									AS 'Original Book Date'
+,ORIGBOOK.EventUserID																	AS 'Original Book User'
+,CONVERT(VARCHAR(10),RECENTBOOK.ActualEventDateTime,101)								AS 'Most Recent Book Date'
+,RECENTBOOK.EventUserID																	AS 'Most Recent Book User'
+,SA.AppointmentTypeID
+,SAQ.AppointmentID
+,SAQ.Response
+,AV.LocationID
 
 
-          WHERE AV.Status IN ('ADM IN', 'DIS IN')
-          AND BV.AdmitDateTime BETWEEN @StartDate AND @EndDate
-          AND INST.Response IN ('CLIFTON','CPH','HAMMOND','HEUV','HIGHLAND','KINNEY','MATCC','MMH','NONE','RHNH','SLPC','STJOEHM','STREG','SUNYCAN','UHACT','UHADULT','UHCNTN','UHNH','WADD','WALSH','WPAH')
-          AND (DISDISPO.DispositionID NOT IN ('REHAB','NBOTHER','ICF','HOSPHOME','HOSPCHMC','E','CHMCSWING') OR DISDISPO.DispositionID IS NULL)
-          AND ALCORD.OrderedProcedureMnemonic IS NULL
-          AND SWINGORD.OrderedProcedureMnemonic IS NULL
-          AND CCORD.OrderedProcedureMnemonic IS NULL
+FROM [Livedb].[dbo].[SchAppointments]			AS SA
+LEFT JOIN [Livedb].[dbo].[AdmVisits]			AS AV			 ON SA.VisitID=AV.VisitID
+LEFT JOIN [Livedb].[dbo].[SchAppointmentQueries]AS SAQ			 ON SA.AppointmentID=SAQ.AppointmentID AND SAQ.QueryID IN ('SCHMRI07','SCHCT07','SCHUS04','SCHACU26')
+
+LEFT JOIN (
+SELECT * FROM(
+SELECT SAE.ActualEventDateTime, SAE.EventUserID, SAE.AppointmentID
+,ROW_NUMBER() OVER (PARTITION BY SAE.AppointmentID ORDER BY SAE.ActualEventDateTime ASC)						AS ApptSeq
+FROM [Livedb].[dbo].[SchAppointmentEvents]	AS SAE
+WHERE SAE.Type='BOOK'
+) AS X
+WHERE X.ApptSeq='1')					AS ORIGBOOK			ON SA.AppointmentID=ORIGBOOK.AppointmentID
+
+LEFT JOIN (
+SELECT * FROM(
+SELECT SAE.ActualEventDateTime, SAE.EventUserID, SAE.AppointmentID
+,ROW_NUMBER() OVER (PARTITION BY SAE.AppointmentID ORDER BY SAE.ActualEventDateTime DESC)						AS ApptSeq
+FROM [Livedb].[dbo].[SchAppointmentEvents]	AS SAE
+WHERE SAE.Type='BOOK'
+) AS X
+WHERE X.ApptSeq='1')					AS RECENTBOOK			ON SA.AppointmentID=RECENTBOOK.AppointmentID
 
 
-          ) AS X
 
+/*
+WHERE CAST(SA.DateTime AS DATE) BETWEEN '2018-10-09' AND '2018-10-09'
+AND SA.CancelReasonID IS NULL
+AND SA.LocationID IN ('RAD')
+*/
 
-          WHERE X.Response IN (@Response)
-          AND X.Location IN (@Location)
+WHERE CAST(SA.DateTime AS DATE) BETWEEN @STARTDATE AND @ENDDATE
+AND SA.CancelReasonID IS NULL
+AND SA.LocationID IN (@LOCATION)
 
-          /*
-          WHERE X.Response IN ('N','L','M','H')
-          AND X.Location IN ('2WEST','2EAST','ICU')
-          */
+--AND AppointmentTypeID LIKE '%MRI%'
+--AND SA.AppointmentID='1680644'
 
-          ORDER BY X.Response
-
-        </CommandText>
+ORDER BY AV.LocationID</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
+      <Fields>
+        <Field Name="VisitID">
+          <DataField>VisitID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AccountNumber">
+          <DataField>AccountNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PrimaryInsuranceID">
+          <DataField>PrimaryInsuranceID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Appointment_Date">
+          <DataField>Appointment Date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Original_Book_Date">
+          <DataField>Original Book Date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Original_Book_User">
+          <DataField>Original Book User</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Most_Recent_Book_Date">
+          <DataField>Most Recent Book Date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Most_Recent_Book_User">
+          <DataField>Most Recent Book User</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AppointmentTypeID">
+          <DataField>AppointmentTypeID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AppointmentID">
+          <DataField>AppointmentID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Response">
+          <DataField>Response</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocationID">
+          <DataField>LocationID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
     </DataSet>
     <DataSet Name="Location">
       <Query>
-        <DataSourceName>datarepo1</DataSourceName>
-        <CommandText>SELECT 
-       [LocationID]
-      ,[Name]
-
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT
+[LocationID]
+ ,[Name]
+ ,[Type]
 
   FROM [Livedb].[dbo].[DMisLocation]
-  WHERE Active='Y' AND Type='I'</CommandText>
+WHERE Active='Y'</CommandText>
       </Query>
       <Fields>
         <Field Name="LocationID">
@@ -162,232 +161,8 @@
           <DataField>Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Percentage">
-      <Query>
-        <DataSourceName>datarepo1</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@Location">
-            <Value>=Parameters!Location.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@StartDate">
-            <Value>=Parameters!StartDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@EndDate">
-            <Value>=Parameters!EndDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@Response">
-            <Value>=Parameters!Response.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>;WITH SUMS AS (
-
-
-SELECT
-
-ISNULL(RESPONSE.Response,'')											AS 'Response'
-,(COUNT(RESPONSE.Response) * 100 / (SELECT COUNT(*) FROM			
-
-[Livedb].[dbo].[AdmVisits]								AS AV
-INNER JOIN		[Livedb].[dbo].[BarVisits]								AS BV			ON AV.VisitID=BV.VisitID
-LEFT JOIN		(SELECT NQR.VisitID,Response,MAX(NQR.DateTime)			AS 'MAX DATE'
-					FROM [Livedb].[dbo].[NurQueryResults]				AS NQR
-					WHERE NQR.QueryID='CMIDT037'			
-					GROUP BY NQR.VisitID,NQR.Response)					AS RESPONSE		ON BV.VisitID=RESPONSE.VisitID
-
-WHERE BV.InpatientOrOutpatient='I'
-AND AV.Status NOT IN ('PRE IN','CAN IN')
-AND AV.LocationID IN (@Location)
-AND BV.AdmitDateTime BETWEEN @StartDate AND @EndDate
-))																		AS ResponseRate
-
-
-FROM			[Livedb].[dbo].[AdmVisits]								AS AV
-INNER JOIN		[Livedb].[dbo].[BarVisits]								AS BV			ON AV.VisitID=BV.VisitID
-LEFT JOIN		(SELECT NQR.VisitID,Response,MAX(NQR.DateTime)			AS 'MAX DATE'
-					FROM [Livedb].[dbo].[NurQueryResults]				AS NQR
-					WHERE NQR.QueryID='CMIDT037'			
-					GROUP BY NQR.VisitID,NQR.Response)					AS RESPONSE		ON BV.VisitID=RESPONSE.VisitID
-
-
-WHERE BV.InpatientOrOutpatient='I'
-AND AV.Status NOT IN ('PRE IN','CAN IN')
-AND RESPONSE.Response IN (@Response)
-AND AV.LocationID IN (@Location)
-AND BV.AdmitDateTime BETWEEN @StartDate AND @EndDate
-
-
-GROUP BY RESPONSE.Response
-
-)
-
-SELECT 
-SUM(ResponseRate)
-FROM SUMS</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField />
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="RawData">
-      <Query>
-        <DataSourceName>datarepo1</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@StartDate">
-            <Value>=Parameters!StartDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@EndDate">
-            <Value>=Parameters!EndDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@Response">
-            <Value>=Parameters!Response.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@Location">
-            <Value>=Parameters!Location.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>SELECT * FROM (
-
-SELECT
- BV.AccountNumber
-,BV.Name
-,ISNULL(CONVERT(VARCHAR(10),BV.AdmitDateTime,101),
-		CONVERT(VARCHAR(10),BV.ServiceDateTime,101))										AS 'Admit/Service Date'
-,ISNULL(CONVERT(VARCHAR(10),BV.DischargeDateTime,101),'')									AS 'Discharge Date'
---,ISNULL(RESPONSE.Response,'')																AS 'Response'
-,CASE WHEN RESPONSE.Response IS NULL THEN 'N'
-		ELSE RESPONSE.Response END															AS 'Response'
-,AV.LocationID																				AS 'Location'
-,AV.Status
-,DISDISPO.Name																				AS 'Dispo Name'
-
-
-
-FROM			[Livedb].[dbo].[AdmVisits]													AS AV
-INNER JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON AV.VisitID=BV.VisitID
-LEFT JOIN		[Livedb].[dbo].[AdmVisitQueries]											AS INST										ON AV.VisitID=INST.VisitID AND INST.QueryID = 'INST'
-LEFT JOIN		[Livedb].[dbo].[AdmPatDischargePlanData]									AS DISPO									ON BV.VisitID=DISPO.VisitID
-LEFT JOIN		[Livedb].[dbo].[DMisDischargeDisposition]									AS DISDISPO									ON DISPO.DispositionID=DISDISPO.DispositionID AND DISDISPO.Active='Y'
-LEFT JOIN		(SELECT NQR.VisitID,Response,MAX(NQR.DateTime)								AS 'MAX DATE'
-					FROM [Livedb].[dbo].[NurQueryResults]									AS NQR
-					WHERE NQR.QueryID='CMIDT037'			
-					GROUP BY NQR.VisitID,NQR.Response)										AS RESPONSE									ON BV.VisitID=RESPONSE.VisitID
------------------------------------------------------------------------------START ORDER SELECTIONS-------------------------------------------------------------------------------
--- LAST ORDER --
-LEFT JOIN		(SELECT * FROM(SELECT
-ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-,ORD.VisitID						
-FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-WHERE ORD.Status != 'CANCEL'
-)																							AS X
-WHERE X.OrderSeq='1')																		AS ORD										ON AV.VisitID=ORD.VisitID
-
--- SWING ORDER --				
-LEFT JOIN (SELECT
-ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-,ORD.VisitID,ORD.OrderedProcedureMnemonic,AV.AccountNumber,BV.AdmitDateTime					
-FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-LEFT JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON ORD.VisitID=BV.VisitID
-LEFT JOIN		[Livedb].[dbo].[AdmVisits]													AS AV										ON ORD.VisitID=AV.VisitID
-INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-WHERE ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('INPTSWG','INPTSWGREC'))	AS SWINGORD									ON AV.VisitID=SWINGORD.VisitID
-
--- OBS ORDER --
-LEFT JOIN (SELECT
-ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-,ORD.VisitID,ORD.OrderedProcedureMnemonic,AV.AccountNumber,BV.AdmitDateTime					
-FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-LEFT JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON ORD.VisitID=BV.VisitID
-LEFT JOIN		[Livedb].[dbo].[AdmVisits]													AS AV										ON ORD.VisitID=AV.VisitID
-INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-WHERE ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('OBSERVICU','OBSERVMS','OBSERVOB'))									AS OBSORD									ON AV.VisitID=OBSORD.VisitID
-
--- ALC ORDER --
-LEFT JOIN (SELECT
-ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-,ORD.VisitID,ORD.OrderedProcedureMnemonic,AV.AccountNumber,BV.AdmitDateTime					
-FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-LEFT JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON ORD.VisitID=BV.VisitID
-LEFT JOIN		[Livedb].[dbo].[AdmVisits]													AS AV										ON ORD.VisitID=AV.VisitID
-INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-WHERE ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('ALC'))					AS ALCORD									ON AV.VisitID=ALCORD.VisitID
-
--- COMFORT CARE ORDER --
-LEFT JOIN (SELECT
-ROW_NUMBER() OVER (PARTITION BY ORD.VisitID ORDER BY ORD.OrderID DESC)						AS OrderSeq
-,ORD.OrderedProcedureName,ORD.Status,PROV.Name,CONVERT(VARCHAR(10),ORD.OrderDateTime,101)	AS 'Order Date'
-,ORD.VisitID,ORD.OrderedProcedureMnemonic,AV.AccountNumber,BV.AdmitDateTime					
-FROM			[Livedb].[dbo].[OeOrders]													AS ORD
-LEFT JOIN		[Livedb].[dbo].[BarVisits]													AS BV										ON ORD.VisitID=BV.VisitID
-LEFT JOIN		[Livedb].[dbo].[AdmVisits]													AS AV										ON ORD.VisitID=AV.VisitID
-INNER JOIN		[Livedb].[dbo].[DMisProvider]												AS PROV										ON ORD.ProviderID=PROV.ProviderID
-WHERE ORD.Status != 'CANCEL' AND ORD.OrderedProcedureMnemonic IN ('COMFORT'))				AS CCORD									ON AV.VisitID=CCORD.VisitID
-
--------------------------------------------------------------------------------END ORDER SELECTIONS-------------------------------------------------------------------------------
-
-
-WHERE AV.Status IN ('ADM IN', 'DIS IN')
-AND BV.AdmitDateTime BETWEEN @StartDate AND @EndDate
-AND INST.Response IN ('CLIFTON','CPH','HAMMOND','HEUV','HIGHLAND','KINNEY','MATCC','MMH','NONE','RHNH','SLPC','STJOEHM','STREG','SUNYCAN','UHACT','UHADULT','UHCNTN','UHNH','WADD','WALSH','WPAH')
-AND (DISDISPO.DispositionID NOT IN ('REHAB','NBOTHER','ICF','HOSPHOME','HOSPCHMC','E','CHMCSWING') OR DISDISPO.DispositionID IS NULL)
-AND ALCORD.OrderedProcedureMnemonic IS NULL
-AND SWINGORD.OrderedProcedureMnemonic IS NULL
-AND CCORD.OrderedProcedureMnemonic IS NULL	
-
-
-) AS X
-
-
-WHERE X.Response IN (@Response)
-AND X.Location IN (@Location)
-
-/*
-WHERE X.Response IN ('N','L','M','H')
-AND X.Location IN ('2WEST','2EAST','ICU')
-*/
-
-ORDER BY X.Response</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="AccountNumber">
-          <DataField>AccountNumber</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Name">
-          <DataField>Name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Admit_Service_Date">
-          <DataField>Admit/Service Date</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Discharge_Date">
-          <DataField>Discharge Date</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Response">
-          <DataField>Response</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Location">
-          <DataField>Location</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Status">
-          <DataField>Status</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Dispo_Name">
-          <DataField>Dispo Name</DataField>
+        <Field Name="Type">
+          <DataField>Type</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -404,7 +179,7 @@ ORDER BY X.Response</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Readmission Risk</Value>
+                    <Value>SCH_AUTHORIZATIONS</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>24pt</FontSize>
@@ -418,7 +193,7 @@ ORDER BY X.Response</CommandText>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
             <Height>0.43in</Height>
-            <Width>7in</Width>
+            <Width>11in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -430,25 +205,37 @@ ORDER BY X.Response</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.70833in</Width>
+                  <Width>0.85417in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.52083in</Width>
+                  <Width>2.5625in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.55208in</Width>
+                  <Width>0.97917in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.63542in</Width>
+                  <Width>1.625in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.57292in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.54167in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.86458in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.90625in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.48958in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.14583in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.21875in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.27083in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -464,7 +251,7 @@ ORDER BY X.Response</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Account Number</Value>
+                                  <Value>Account </Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -473,7 +260,9 @@ ORDER BY X.Response</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox2</rd:DefaultName>
@@ -512,7 +301,9 @@ ORDER BY X.Response</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox3</rd:DefaultName>
@@ -542,7 +333,7 @@ ORDER BY X.Response</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Admit Service Date</Value>
+                                  <Value>Ins ID</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -551,7 +342,9 @@ ORDER BY X.Response</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox4</rd:DefaultName>
@@ -581,7 +374,7 @@ ORDER BY X.Response</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Discharge Date</Value>
+                                  <Value>Appointment Date</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -622,7 +415,7 @@ ORDER BY X.Response</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Response</Value>
+                                  <Value>Original Book Date</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -663,7 +456,7 @@ ORDER BY X.Response</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Location ID</Value>
+                                  <Value>Original Book User</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -704,7 +497,7 @@ ORDER BY X.Response</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Status</Value>
+                                  <Value>Most Recent Book Date</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
@@ -719,6 +512,170 @@ ORDER BY X.Response</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>#becd96</BackgroundColor>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Most Recent Book User</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#325a91</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>#becd96</BackgroundColor>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Appointment Type</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#325a91</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>#becd96</BackgroundColor>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Authorization</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#325a91</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>#becd96</BackgroundColor>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Location ID</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#325a91</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox12</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -758,7 +715,7 @@ ORDER BY X.Response</CommandText>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -795,7 +752,9 @@ ORDER BY X.Response</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Name</rd:DefaultName>
@@ -817,14 +776,14 @@ ORDER BY X.Response</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Admit_Service_Date">
+                        <Textbox Name="PrimaryInsuranceID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Admit_Service_Date.Value</Value>
+                                  <Value>=Fields!PrimaryInsuranceID.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <Color>#333333</Color>
@@ -836,7 +795,7 @@ ORDER BY X.Response</CommandText>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Admit_Service_Date</rd:DefaultName>
+                          <rd:DefaultName>PrimaryInsuranceID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -855,14 +814,14 @@ ORDER BY X.Response</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Discharge_Date">
+                        <Textbox Name="Appointment_Date">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Discharge_Date.Value</Value>
+                                  <Value>=Fields!Appointment_Date.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <Color>#333333</Color>
@@ -874,7 +833,197 @@ ORDER BY X.Response</CommandText>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Discharge_Date</rd:DefaultName>
+                          <rd:DefaultName>Appointment_Date</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Original_Book_Date">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Original_Book_Date.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Original_Book_Date</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Original_Book_User">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Original_Book_User.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Original_Book_User</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Most_Recent_Book_Date">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Most_Recent_Book_Date.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Most_Recent_Book_Date</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Most_Recent_Book_User">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Most_Recent_Book_User.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Most_Recent_Book_User</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="AppointmentTypeID">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!AppointmentTypeID.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>AppointmentTypeID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -931,14 +1080,14 @@ ORDER BY X.Response</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Location">
+                        <Textbox Name="LocationID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Location.Value</Value>
+                                  <Value>=Fields!LocationID.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <Color>#333333</Color>
@@ -950,45 +1099,7 @@ ORDER BY X.Response</CommandText>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Location</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Status">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Status.Value</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Status</rd:DefaultName>
+                          <rd:DefaultName>LocationID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1018,6 +1129,10 @@ ORDER BY X.Response</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1040,143 +1155,19 @@ ORDER BY X.Response</CommandText>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>RawData</DataSetName>
+            <DataSetName>PrimaryQuery</DataSetName>
             <Top>0.43in</Top>
             <Height>0.43in</Height>
-            <Width>10.90624in</Width>
+            <Width>18.54167in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
-          <Textbox Name="ID">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value xml:space="preserve">  </Value>
-                    <Style>
-                      <FontSize>14pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#325a91</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Sum(Fields!ID.Value, "Percentage")</Value>
-                    <Style>
-                      <FontSize>14pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#325a91</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ID</rd:DefaultName>
-            <Top>0.91556in</Top>
-            <Left>7.75in</Left>
-            <Height>0.25in</Height>
-            <Width>3.15625in</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundColor>#becd96</BackgroundColor>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox20">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>      Response Percent Total:</Value>
-                    <Style>
-                      <FontSize>14pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <Color>#325a91</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Right</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox20</rd:DefaultName>
-            <Top>0.91556in</Top>
-            <Left>5in</Left>
-            <Height>0.25in</Height>
-            <Width>2.75in</Width>
-            <ZIndex>3</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundColor>#becd96</BackgroundColor>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox9">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=COUNTROWS("RawData")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox9</rd:DefaultName>
-            <Top>1.11333in</Top>
-            <Left>0.94667in</Left>
-            <Height>0.25in</Height>
-            <Width>1in</Width>
-            <ZIndex>4</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
-        <Height>1.36333in</Height>
+        <Height>0.86in</Height>
         <Style />
       </Body>
-      <Width>10.90625in</Width>
+      <Width>21.51042in</Width>
       <Page>
-        <PageFooter>
-          <Height>1in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
         <TopMargin>1in</TopMargin>
@@ -1186,31 +1177,17 @@ ORDER BY X.Response</CommandText>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="Response">
-      <DataType>String</DataType>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>Response</Prompt>
-      <ValidValues>
-        <ParameterValues>
-          <ParameterValue>
-            <Value>H</Value>
-            <Label>High</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>M</Value>
-            <Label>Medium</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>L</Value>
-            <Label>Low</Label>
-          </ParameterValue>
-        </ParameterValues>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
+    <ReportParameter Name="STARTDATE">
+      <DataType>DateTime</DataType>
+      <Prompt>STARTDATE</Prompt>
     </ReportParameter>
-    <ReportParameter Name="Location">
+    <ReportParameter Name="ENDDATE">
+      <DataType>DateTime</DataType>
+      <Prompt>ENDDATE</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LOCATION">
       <DataType>String</DataType>
-      <Prompt>Location</Prompt>
+      <Prompt>LOCATION</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>Location</DataSetName>
@@ -1219,14 +1196,6 @@ ORDER BY X.Response</CommandText>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="StartDate">
-      <DataType>DateTime</DataType>
-      <Prompt>Start Date</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="EndDate">
-      <DataType>DateTime</DataType>
-      <Prompt>End Date</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -1237,22 +1206,17 @@ ORDER BY X.Response</CommandText>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Response</ParameterName>
+          <ParameterName>STARTDATE</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Location</ParameterName>
+          <ParameterName>ENDDATE</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>StartDate</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>EndDate</ParameterName>
+          <ParameterName>LOCATION</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -1260,5 +1224,5 @@ ORDER BY X.Response</CommandText>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>f63e3730-17b2-4fdb-a2eb-85c6df2b9c97</rd:ReportID>
+  <rd:ReportID>73560f38-3625-49e6-adfa-8351cb9daa4e</rd:ReportID>
 </Report>
