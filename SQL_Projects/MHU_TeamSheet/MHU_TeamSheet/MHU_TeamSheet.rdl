@@ -919,7 +919,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox3</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -974,7 +973,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox4</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1031,7 +1029,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1086,7 +1083,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox6</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1141,7 +1137,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox7</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1181,7 +1176,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox8</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1238,7 +1232,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox9</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1293,7 +1286,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox10</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1333,7 +1325,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox11</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1373,7 +1364,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox12</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1428,7 +1418,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox13</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1483,7 +1472,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox14</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1523,7 +1511,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox15</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1578,7 +1565,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox16</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1633,7 +1619,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>Textbox246</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1687,7 +1672,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox18</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1742,7 +1726,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox19</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -1785,13 +1768,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>PT_NAME</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1825,13 +1808,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>MR_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1865,13 +1848,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>AGE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1905,13 +1888,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>DOB</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1945,13 +1928,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>GEN</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1985,13 +1968,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ADMIT_DATE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2025,13 +2008,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LOS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2065,13 +2048,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LEGAL_STATUS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2105,13 +2088,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>OBS_LVL</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2145,13 +2128,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>DX_CODE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2185,13 +2168,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>CLINIC</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2225,13 +2208,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ID_LAST_DC</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2265,13 +2248,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LEGAL_ISSUES</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2305,12 +2288,12 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>Textbox247</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2344,13 +2327,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ID_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2384,13 +2367,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>INS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2424,13 +2407,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>TX__COOR_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2500,8 +2483,8 @@ ORDER BY BV.Name</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>SILVERNEW</DataSetName>
-            <Top>0.01708in</Top>
-            <Left>0.10417in</Left>
+            <Top>0.14208in</Top>
+            <Left>0.35417in</Left>
             <Height>0.87959in</Height>
             <Width>10.09737in</Width>
             <Style />
@@ -2591,7 +2574,7 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>TEAM</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Style>None</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
@@ -2666,7 +2649,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox3</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -2721,7 +2703,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox4</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -2778,7 +2759,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -2833,7 +2813,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox6</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -2888,7 +2867,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox7</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -2928,7 +2906,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox8</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -2985,7 +2962,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox9</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3040,7 +3016,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox10</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3080,7 +3055,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox11</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3120,7 +3094,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox12</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3175,7 +3148,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox13</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3230,7 +3202,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox14</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3270,7 +3241,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox15</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3325,7 +3295,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox16</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3380,7 +3349,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>Textbox246</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3434,7 +3402,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox18</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3489,7 +3456,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox19</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -3532,13 +3498,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>PT_NAME</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3572,13 +3538,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>MR_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3612,13 +3578,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>AGE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3652,13 +3618,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>DOB</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3692,13 +3658,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>GEN</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3732,13 +3698,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ADMIT_DATE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3772,13 +3738,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LOS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3812,13 +3778,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LEGAL_STATUS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3852,13 +3818,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>OBS_LVL</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3892,13 +3858,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>DX_CODE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3932,13 +3898,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>CLINIC</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3972,13 +3938,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ID_LAST_DC</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4012,13 +3978,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LEGAL_ISSUES</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4052,12 +4018,12 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>Textbox247</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4091,13 +4057,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ID_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4131,13 +4097,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>INS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4171,13 +4137,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>TX__COOR_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4247,8 +4213,8 @@ ORDER BY BV.Name</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>BLUENEW</DataSetName>
-            <Top>0.88687in</Top>
-            <Left>0.10417in</Left>
+            <Top>1.01187in</Top>
+            <Left>0.35417in</Left>
             <Height>0.90042in</Height>
             <Width>10.09737in</Width>
             <ZIndex>1</ZIndex>
@@ -4414,7 +4380,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox3</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4469,7 +4434,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox4</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4526,7 +4490,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4581,7 +4544,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox6</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4636,7 +4598,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox7</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4676,7 +4637,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox8</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4733,7 +4693,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox9</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4788,7 +4747,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox10</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4828,7 +4786,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox11</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4868,7 +4825,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox12</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4923,7 +4879,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox13</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -4978,7 +4933,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox14</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -5018,7 +4972,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox15</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -5073,7 +5026,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox16</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -5128,7 +5080,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>Textbox246</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -5182,7 +5133,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox18</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -5237,7 +5187,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox19</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -5280,13 +5229,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>PT_NAME</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5320,13 +5269,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>MR_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5360,13 +5309,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>AGE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5400,13 +5349,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>DOB</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5440,13 +5389,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>GEN</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5480,13 +5429,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ADMIT_DATE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5520,13 +5469,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LOS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5560,13 +5509,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LEGAL_STATUS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5600,13 +5549,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>OBS_LVL</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5640,13 +5589,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>DX_CODE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5680,13 +5629,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>CLINIC</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5720,13 +5669,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ID_LAST_DC</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5760,13 +5709,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LEGAL_ISSUES</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5800,12 +5749,12 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>Textbox247</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5839,13 +5788,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ID_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5879,13 +5828,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>INS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5919,13 +5868,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>TX__COOR_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5998,12 +5947,14 @@ ORDER BY BV.Name</CommandText>
             <PageBreak>
               <BreakLocation>Start</BreakLocation>
             </PageBreak>
-            <Top>1.85562in</Top>
-            <Left>0.10417in</Left>
+            <Top>2.10562in</Top>
+            <Left>0.35417in</Left>
             <Height>0.90042in</Height>
             <Width>10.09737in</Width>
             <ZIndex>2</ZIndex>
-            <Style />
+            <Style>
+              <PaddingTop>10pt</PaddingTop>
+            </Style>
           </Tablix>
           <Tablix Name="table5">
             <TablixBody>
@@ -6090,7 +6041,7 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>TEAM</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Style>None</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
@@ -6165,7 +6116,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox3</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6220,7 +6170,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox4</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6277,7 +6226,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6332,7 +6280,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox6</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6387,7 +6334,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox7</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6427,7 +6373,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox8</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6484,7 +6429,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox9</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6539,7 +6483,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox10</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6579,7 +6522,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox11</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6619,7 +6561,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox12</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6674,7 +6615,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox13</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6729,7 +6669,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox14</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6769,7 +6708,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox15</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6824,7 +6762,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox16</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6879,7 +6816,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>Textbox246</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6933,7 +6869,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox18</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -6988,7 +6923,6 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>textbox19</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
@@ -7031,13 +6965,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>PT_NAME</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7071,13 +7005,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>MR_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7111,13 +7045,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>AGE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7151,13 +7085,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>DOB</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7191,13 +7125,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>GEN</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7231,13 +7165,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ADMIT_DATE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7271,13 +7205,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LOS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7311,13 +7245,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LEGAL_STATUS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7351,13 +7285,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>OBS_LVL</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7391,13 +7325,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>DX_CODE</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7431,13 +7365,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>CLINIC</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7471,13 +7405,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ID_LAST_DC</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7511,13 +7445,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>LEGAL_ISSUES</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7551,12 +7485,12 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>Textbox247</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7590,13 +7524,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>ID_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7630,13 +7564,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>INS</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7670,13 +7604,13 @@ ORDER BY BV.Name</CommandText>
                           <rd:DefaultName>TX__COOR_</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -7746,21 +7680,23 @@ ORDER BY BV.Name</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>REDNEW</DataSetName>
-            <Top>2.75145in</Top>
-            <Left>0.10417in</Left>
+            <Top>3.00145in</Top>
+            <Left>0.35417in</Left>
             <Height>0.90042in</Height>
             <Width>10.09737in</Width>
             <ZIndex>3</ZIndex>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>3.84083in</Height>
+        <Height>4.07in</Height>
         <Style />
       </Body>
       <Width>11.03645in</Width>
       <Page>
         <PageHeight>8.5in</PageHeight>
         <PageWidth>11in</PageWidth>
+        <TopMargin>0.25in</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
