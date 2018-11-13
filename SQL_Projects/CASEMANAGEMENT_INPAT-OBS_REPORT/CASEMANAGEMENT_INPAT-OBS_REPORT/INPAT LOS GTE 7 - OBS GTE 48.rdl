@@ -395,7 +395,7 @@ ORDER BY LOS</CommandText>
           </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT        AV.Name/*,BV.VisitID*/ , CONVERT(VARCHAR(10), BV.AdmitDateTime, 101) AS 'Admit Date', ISNULL(CONVERT(VARCHAR(10), BV.DischargeDateTime, 101), '') 
-                         AS 'Discharge Date', AV.LocationID AS 'Location', DATEDIFF(DAY, BV.AdmitDateTime, GETDATE()) AS 'LOS', BV.PrimaryInsuranceID AS 'Primary Insurance', 
+                         AS 'Discharge Date', AV.LocationID AS 'Location', DATEDIFF(DAY, BV.AdmitDateTime, BV.DischargeDateTime) AS 'LOS', BV.PrimaryInsuranceID AS 'Primary Insurance', 
                          BVP.Name AS 'Attending Physician (BAR)', '' AS ' ', ISNULL(ORD.Name, '') AS 'Last Ordering Physician', ISNULL(ORD.[Order Date], '') AS 'Order Date', 
                          ISNULL(ORD.OrderedProcedureName, '') AS 'Order Name', '' AS '  ', ISNULL(DPROV.Name, '') AS 'Last Dictating Physician', ISNULL(CONVERT(VARCHAR(10), 
                          PD.SignDateTime, 101), '') AS 'Note Signed Date', ISNULL(PD.DocumentTemplateID, '') AS 'Note Type', ISNULL(RPT.Name, '') AS 'Note Name'
@@ -592,10 +592,10 @@ ORDER BY LOS</CommandText>
                   <Width>1.79167in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.75in</Width>
+                  <Width>2.46875in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.58333in</Width>
+                  <Width>2.46875in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1231,7 +1231,7 @@ ORDER BY LOS</CommandText>
             <DataSetName>OBS48HR</DataSetName>
             <Top>2.69972in</Top>
             <Height>0.61458in</Height>
-            <Width>9.70834in</Width>
+            <Width>11.31251in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1296,10 +1296,10 @@ ORDER BY LOS</CommandText>
                   <Width>2.29167in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.29167in</Width>
+                  <Width>2.46875in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.29167in</Width>
+                  <Width>2.51042in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1968,7 +1968,7 @@ ORDER BY LOS</CommandText>
             <DataSetName>LOS_UPDATED</DataSetName>
             <Top>0.48556in</Top>
             <Height>0.4439in</Height>
-            <Width>13.32295in</Width>
+            <Width>13.71878in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -2001,10 +2001,10 @@ ORDER BY LOS</CommandText>
                   <Width>2.29167in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.29167in</Width>
+                  <Width>2.46875in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.29167in</Width>
+                  <Width>2.51042in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -2673,7 +2673,7 @@ ORDER BY LOS</CommandText>
             <DataSetName>LOS_DIS</DataSetName>
             <Top>1.49875in</Top>
             <Height>0.5in</Height>
-            <Width>13.32295in</Width>
+            <Width>13.71878in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
