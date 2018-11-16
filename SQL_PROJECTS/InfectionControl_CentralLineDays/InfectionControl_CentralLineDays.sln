@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "InfectionControl_CentralLineDays", "InfectionControl_CentralLineDays\InfectionControl_CentralLineDays.rptproj", "{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}.Debug|Default.ActiveCfg = Debug
+		{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}.Debug|Default.Build.0 = Debug
+		{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}.Debug|Default.Deploy.0 = Debug
+		{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}.DebugLocal|Default.Build.0 = DebugLocal
+		{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}.Release|Default.ActiveCfg = Release
+		{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}.Release|Default.Build.0 = Release
+		{3E74216A-4ED3-4201-BD4C-2BACC4CBBDF0}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
