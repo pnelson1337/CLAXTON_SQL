@@ -31,7 +31,7 @@ JOIN Livedb.dbo.DBarProcedures bp ON ct.TransactionProcedureID=bp.ProcedureID AN
 LEFT JOIN Livedb.dbo.AdmVisits av ON ct.VisitID=av.VisitID
 --LEFT JOIN [Livedb].[dbo].[BarUniqueClaimReferenceData]		AS UCRN	ON ct.VisitID=UCRN.VisitID
 	
-WHERE CONVERT(varchar(10),bv.ServiceDateTime,23) BETWEEN '2015-01-01' AND '2015-12-31' OR CONVERT(varchar(10),bv.AdmitDateTime,23) BETWEEN '2015-01-01' AND '2015-12-31'
+WHERE CONVERT(varchar(10),bv.ServiceDateTime,23) BETWEEN '2016-01-01' AND '2016-12-31' OR CONVERT(varchar(10),bv.AdmitDateTime,23) BETWEEN '2016-01-01' AND '2016-12-31'
 
 
 UNION ALL
@@ -59,16 +59,16 @@ SELECT
 	,COALESCE(CONVERT(varchar(10),fd2.AttendProviderID,23), '') + '' + COALESCE(CONVERT(varchar(10),fd2.ErProviderID,23), '')	AS 'XXDoc'
 	,ct.UniqueClaimReferenceNumber																								AS 'TransactionUCRN'
 
-FROM [Livedb].[dbo].[BarCollectionTransactions] ct
+FROM [Livedb].[dbo].[BarCollectionTransactions]		AS  ct
 
-JOIN Livedb.dbo.BarVisits bv ON ct.VisitID=bv.VisitID
-JOIN Livedb.dbo.BarVisitFinancialData fd ON ct.VisitID=fd.VisitID
-JOIN Livedb.dbo.BarVisitFinancialData2 fd2 ON fd.VisitID=fd2.VisitID
-JOIN Livedb.dbo.DBarProcedures bp ON ct.TransactionProcedureID=bp.ProcedureID AND bp.Active='Y'
-LEFT JOIN Livedb.dbo.AdmVisits av ON ct.VisitID=av.VisitID
+JOIN Livedb.dbo.BarVisits							AS	bv  ON ct.VisitID=bv.VisitID
+JOIN Livedb.dbo.BarVisitFinancialData				AS	fd  ON ct.VisitID=fd.VisitID
+JOIN Livedb.dbo.BarVisitFinancialData2				AS	fd2 ON fd.VisitID=fd2.VisitID
+JOIN Livedb.dbo.DBarProcedures						AS	bp  ON ct.TransactionProcedureID=bp.ProcedureID AND bp.Active='Y'
+LEFT JOIN Livedb.dbo.AdmVisits						AS	av  ON ct.VisitID=av.VisitID
 --LEFT JOIN [Livedb].[dbo].[BarUniqueClaimReferenceData]		AS UCRN	ON ct.VisitID=UCRN.VisitID
 	
-WHERE CONVERT(varchar(10),bv.ServiceDateTime,23) BETWEEN '2015-01-01' AND '2015-12-31' OR CONVERT(varchar(10),bv.AdmitDateTime,23) BETWEEN '2015-01-01' AND '2015-12-31'
+WHERE CONVERT(varchar(10),bv.ServiceDateTime,23) BETWEEN '2016-01-01' AND '2016-12-31' OR CONVERT(varchar(10),bv.AdmitDateTime,23) BETWEEN '2016-01-01' AND '2016-12-31'
 AND ct.Type IN ('R','A')
 
 

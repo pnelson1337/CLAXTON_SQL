@@ -1,0 +1,35 @@
+SELECT DISTINCT
+
+ ITEMS.Number
+
+
+,ITEMPACKAGE.Packaging
+,LEFT(ITEMPACKAGE.Packaging, CHARINDEX('/',ITEMPACKAGE.Packaging) - 1 )
+,SUBSTRING(ITEMPACKAGE.Packaging, CHARINDEX('/', ITEMPACKAGE.Packaging) + 1, LEN(ITEMPACKAGE.Packaging))
+
+
+
+
+
+
+
+
+
+
+FROM		[Livedb].[dbo].[DMmItems]			AS ITEMS
+--LEFT JOIN	[Livedb].[dbo].[DMmItemUnits]		AS ITEMUNIT		ON ITEMS.ItemID=ITEMUNIT.ItemID
+
+LEFT JOIN	[Livedb].[dbo].[DMmItemPackagingTrees]		AS ITEMPACKAGE		ON ITEMS.ItemID=ITEMPACKAGE.ItemID
+
+	
+WHERE ITEMS.Active='Y'
+AND ITEMS.SourceID='ABH'
+--AND ITEMS.Number='00117'
+
+AND ITEMS.ItemID='35807'
+--AND ITEMS.ItemID='26560'
+--AND PackageSize='EA'
+
+ORDER BY ITEMS.Number
+
+

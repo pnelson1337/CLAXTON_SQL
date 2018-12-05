@@ -9,7 +9,7 @@ SELECT
  END																														AS 'MI'
    ,CASE WHEN PPEmp.SortName NOT LIKE '%,%' THEN PPEmp.SortName ELSE LEFT(PPEmp.SortName, CHARINDEX(',',PPEmp.SortName)- 1)
  END																														AS 'Last'
-
+ /*
 ,''																															AS 'Suffix'
 ,CONVERT(DATE,PPEmp.[BirthDateTime],23)																						AS 'DOB'
 ,PPEmp.[Sex]																												AS 'Sex'
@@ -26,12 +26,11 @@ SELECT
 ,'26'																														AS 'Payroll Frequency'
 ,'24'																														AS 'Deduction Frequency'
 ,PPEPay.[YearlySalary]																										AS 'Gross Salary'
-,PPEPay.[Dept]																												AS 'Location Number'
-,(SELECT temp.Name
-  FROM [Livedb].[dbo].[DMisGlComponentValue] temp
-  WHERE PPEPay.Dept=temp.ValueID AND temp.ComponentID='DPT' )																AS 'Location'
---,PPEPay.[Contract]																											AS 'Contract'
---,PPEPay.[EmployeeType]																										AS 'Type'
+,''																															AS 'Location Number'
+,'Claxton Hepburn Medical Center'																							AS 'Location'
+*/
+,PPEPay.[Contract]																											AS 'Contract'
+,PPEPay.[EmployeeType]																										AS 'Type'
 
 ,CASE 
 WHEN PPEPay.[Contract] ='L200' AND PPEPay.[EmployeeType]='FTHRL' THEN '1199 Full Time Active'
@@ -80,7 +79,9 @@ ELSE 'UNKNOWN' END																											AS 'Job Class'
 
 FROM [Livedb].[dbo].[PpEmployees] PPEmp
 JOIN [Livedb].[dbo].[PpEmployeePayroll] PPEPay ON PPEPay.EmployeeID=PPEmp.EmployeeID
-WHERE PPEPay.[Status]='ACTIVE' 
-AND PPEPay.EmployeeType!='PDIEM'
+--WHERE PPEPay.[Status]='ACTIVE' 
+--AND PPEPay.EmployeeType!='PDIEM'
+
+WHERE PPEPay.Status NOT IN('LEAVE','TERM','LT DIS','W COMP','RETIRED','DECEASED')
 
 ORDER BY [Job Class] 

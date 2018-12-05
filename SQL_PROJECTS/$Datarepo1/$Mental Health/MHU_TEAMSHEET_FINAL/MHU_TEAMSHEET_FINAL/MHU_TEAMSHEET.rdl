@@ -421,7 +421,7 @@ WHERE        (Status = 'ADM IN') AND (LocationID = '3RD')</CommandText>
                   <Width>0.75in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.27084in</Width>
+                  <Width>0.285in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -2075,7 +2075,7 @@ WHERE        (Status = 'ADM IN') AND (LocationID = '3RD')</CommandText>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.00292in</Top>
             <Height>1.1in</Height>
-            <Width>10.32542in</Width>
+            <Width>10.33958in</Width>
             <Style />
           </Tablix>
           <Tablix Name="table2">
@@ -2088,7 +2088,7 @@ WHERE        (Status = 'ADM IN') AND (LocationID = '3RD')</CommandText>
                   <Width>0.55in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.32292in</Width>
+                  <Width>0.33in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.72917in</Width>
@@ -2130,7 +2130,7 @@ WHERE        (Status = 'ADM IN') AND (LocationID = '3RD')</CommandText>
                   <Width>0.75in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.27084in</Width>
+                  <Width>0.285in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -3787,7 +3787,7 @@ WHERE        (Status = 'ADM IN') AND (LocationID = '3RD')</CommandText>
             </PageBreak>
             <Top>1.53584in</Top>
             <Height>1.1in</Height>
-            <Width>10.31834in</Width>
+            <Width>10.33958in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
