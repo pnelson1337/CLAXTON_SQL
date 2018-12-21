@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ChargeTrasactionsSingleColumn", "ChargeTrasactionsSingleColumn\ChargeTrasactionsSingleColumn.rptproj", "{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}.Debug|Default.ActiveCfg = Debug
+		{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}.Debug|Default.Build.0 = Debug
+		{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}.Debug|Default.Deploy.0 = Debug
+		{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}.DebugLocal|Default.Build.0 = DebugLocal
+		{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}.Release|Default.ActiveCfg = Release
+		{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}.Release|Default.Build.0 = Release
+		{8CDA5C8E-BB3F-4619-A66F-AA4F1FAFB9E6}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+SELECT
+ONE.CaseID 
+,RIGHT('0' + CAST(DATEPART(HH,Op2DateTime) AS VARCHAR),2)+RIGHT('0' + CAST(DATEPART(MI,Op2DateTime) AS VARCHAR),2)							AS 'OR IN'
+,RIGHT('0' + CAST(DATEPART(HH,Op6DateTime) AS VARCHAR),2)+RIGHT('0' + CAST(DATEPART(MI,Op6DateTime) AS VARCHAR),2)							AS 'OR OUT'
+ FROM		[Livedb].[dbo].[SchPatOrCaseTimesOp1]	AS ONE
+ LEFT JOIN	[Livedb].[dbo].[SchPatOrCaseTimesOp2]	AS TWO	ON ONE.CaseID=TWO.CaseID

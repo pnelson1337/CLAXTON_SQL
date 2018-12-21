@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PROCEDURES_SINGLECELL", "PROCEDURES_SINGLECELL\PROCEDURES_SINGLECELL.rptproj", "{478DDDEB-FC13-445A-9645-889C9F73E090}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{478DDDEB-FC13-445A-9645-889C9F73E090}.Debug|Default.ActiveCfg = Debug
+		{478DDDEB-FC13-445A-9645-889C9F73E090}.Debug|Default.Build.0 = Debug
+		{478DDDEB-FC13-445A-9645-889C9F73E090}.Debug|Default.Deploy.0 = Debug
+		{478DDDEB-FC13-445A-9645-889C9F73E090}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{478DDDEB-FC13-445A-9645-889C9F73E090}.DebugLocal|Default.Build.0 = DebugLocal
+		{478DDDEB-FC13-445A-9645-889C9F73E090}.Release|Default.ActiveCfg = Release
+		{478DDDEB-FC13-445A-9645-889C9F73E090}.Release|Default.Build.0 = Release
+		{478DDDEB-FC13-445A-9645-889C9F73E090}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

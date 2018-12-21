@@ -1,4 +1,8 @@
+DECLARE @STARTDATE DATETIME, @ENDDATE DATETIME
 
+SET @STARTDATE='2018-01-01'
+SET @ENDDATE  ='2018-10-31'
+SELECT * FROM (
 SELECT 
 
 BV.AccountNumber
@@ -33,13 +37,15 @@ LEFT JOIN	(SELECT BV.VisitID
 
 
 
-WHERE (CAST(BV.DischargeDateTime AS DATE) BETWEEN '2018-10-01' AND '2018-10-31' OR (CAST(BV.ServiceDateTime AS DATE) BETWEEN '2018-10-01' AND '2018-10-31'))
-AND BVFD.AccountType IN ('ER')
-AND BV.FinancialClassID IN ('HMCD')
+WHERE (CAST(BV.AdmitDateTime AS DATE) BETWEEN @STARTDATE AND @ENDDATE OR (CAST(BV.ServiceDateTime AS DATE) BETWEEN @STARTDATE AND @ENDDATE))
+AND BV.FinancialClassID IN ('MCR')
 AND EXISTS (
-			SELECT * FROM [Livedb].[dbo].[BarChargeTransactions] AS SELBCT WHERE SELBCT.TransactionProcedureID IN ('350104','420010')
+			SELECT * FROM [Livedb].[dbo].[BarChargeTransactions] AS SELBCT WHERE SELBCT.TransactionProcedureID IN ('471409')
 			AND SELBCT.VisitID=BV.VisitID
 			)
+) AS X
+
+WHERE X.[Account Type] IN ('OPV')
 
 
 ORDER BY [Discharge/Service Date]

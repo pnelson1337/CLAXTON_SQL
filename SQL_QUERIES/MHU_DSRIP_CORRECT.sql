@@ -51,7 +51,7 @@ LEFT JOIN	[Livedb].[dbo].[AdmPatDischargePlanFormQueries]															AS FU13	
 LEFT JOIN	[Livedb].[dbo].[AdmPatDischargePlanFormQueries]															AS FU14			ON AV.VisitID=FU14.VisitID AND FU14.QueryID='MHUFU1.4' AND RXMORD.OrderSeq = '1'
 
 
-WHERE CAST(BV.DischargeDateTime AS DATE) BETWEEN  '2018-07-01' AND '2018-09-30'
+WHERE CAST(BV.DischargeDateTime AS DATE) BETWEEN  '2018-10-01' AND '2018-12-31'
 AND DISPO.DispositionID IN ('H','HHS','HPSY')
 AND AV.InpatientServiceID ='MHC'
 AND BV.DischargeDateTime IS NOT NULL
