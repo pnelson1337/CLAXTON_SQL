@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "DischargeStatistics", "DischargeStatistics\DischargeStatistics.rptproj", "{35E4C058-6867-4AC7-9904-44CD1D003267}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35E4C058-6867-4AC7-9904-44CD1D003267}.Debug|Default.ActiveCfg = Debug
+		{35E4C058-6867-4AC7-9904-44CD1D003267}.Debug|Default.Build.0 = Debug
+		{35E4C058-6867-4AC7-9904-44CD1D003267}.Debug|Default.Deploy.0 = Debug
+		{35E4C058-6867-4AC7-9904-44CD1D003267}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{35E4C058-6867-4AC7-9904-44CD1D003267}.DebugLocal|Default.Build.0 = DebugLocal
+		{35E4C058-6867-4AC7-9904-44CD1D003267}.Release|Default.ActiveCfg = Release
+		{35E4C058-6867-4AC7-9904-44CD1D003267}.Release|Default.Build.0 = Release
+		{35E4C058-6867-4AC7-9904-44CD1D003267}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

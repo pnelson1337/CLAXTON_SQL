@@ -5,8 +5,8 @@
   <DataSets />
   <Reports>
     <ProjectItem>
-      <Name>CHARGE_PROCEDURES_SINGLE_FILE.rdl</Name>
-      <FullPath>CHARGE_PROCEDURES_SINGLE_FILE.rdl</FullPath>
+      <Name>CM_ComfortCare.rdl</Name>
+      <FullPath>CM_ComfortCare.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
@@ -17,10 +17,10 @@
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
         <TargetServerURL>http://datarepo1/ReportServer</TargetServerURL>
-        <TargetFolder>Finance</TargetFolder>
+        <TargetFolder>Case Management</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
-        <StartItem>CHARGE_PROCEDURES_SINGLE_FILE.rdl</StartItem>
+        <StartItem>CM_ComfortCare.rdl</StartItem>
       </Options>
     </Configuration>
     <Configuration>
@@ -30,7 +30,7 @@
         <OutputPath>bin\DebugLocal</OutputPath>
         <TargetServerVersion>SSRS2016</TargetServerVersion>
         <TargetServerURL>http://localhost/reportserver</TargetServerURL>
-        <TargetFolder>CHARGE_TRANSACTIONS</TargetFolder>
+        <TargetFolder>CM_ComfortCare</TargetFolder>
         <TargetMobileReportFolder>Mobile Reports</TargetMobileReportFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
@@ -44,7 +44,7 @@
         <OutputPath>bin\Release</OutputPath>
         <TargetServerVersion>SSRS2016</TargetServerVersion>
         <TargetServerURL>http://localhost/reportserver</TargetServerURL>
-        <TargetFolder>CHARGE_TRANSACTIONS</TargetFolder>
+        <TargetFolder>CM_ComfortCare</TargetFolder>
         <TargetMobileReportFolder>Mobile Reports</TargetMobileReportFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>

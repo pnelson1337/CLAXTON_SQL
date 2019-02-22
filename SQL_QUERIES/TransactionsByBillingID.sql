@@ -1,10 +1,13 @@
+DECLARE @STARTDATE VARCHAR(10) = '2017-04-01'
+DECLARE @ENDDATE VARCHAR(10) = '2018-12-31'
+
 SELECT
 
- BCT.BillingID
-,BCTI.Amount
-,BCTI.Type
-,BCTI.BatchID
+
+BV.AccountNumber
 ,BCH.DateTime
+,BCTI.Amount
+
 
 
 
@@ -14,9 +17,7 @@ INNER JOIN	[Livedb].[dbo].[BarBchs]			AS		BCH			ON BCH.BatchID=BCT.BatchID AND B
 LEFT JOIN	[Livedb].[dbo].[BarBchTxnItems]		AS		BCTI		ON BCT.BatchID=BCTI.BatchID AND BCT.TxnNumberID=BCTI.TxnNumberID
 
 
-  
---WHERE BCT.BillingID='2959265'
---AND BCTI.Type IN ('ADJ','RCP')
-WHERE BCH.DateTime > '2018-10-01'
-
-ORDER BY BCTI.Type
+WHERE BCH.DateTime BETWEEN @STARTDATE AND @ENDDATE
+AND BCTI.Type IN ('RCP')
+AND BCT.InsuranceID='WEXFORD'
+ORDER BY BCH.DateTime

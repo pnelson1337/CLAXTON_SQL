@@ -80,7 +80,7 @@ SELECT
 	  WHEN COALESCE(FU163.Response,FU263.Response,FU363.Response,FU463.Response,FU563.Response) IS NULL THEN 'FOLLOW UP #2'
 	  WHEN COALESCE(FU173.Response,FU273.Response,FU373.Response,FU473.Response,FU573.Response) IS NULL THEN 'FOLLOW UP #3' END														AS  'FUNumber'
 ,AV.InpatientServiceID			 
-
+,ISNULL(TS4.Response,'EP')																																										AS 'TX. COOR'
 FROM	 	[Livedb].[dbo].[AdmVisits]															AS AV
 LEFT JOIN	[Livedb].[dbo].[BarVisits]															AS BV			ON AV.VisitID=BV.VisitID
 LEFT JOIN	(SELECT
@@ -149,6 +149,7 @@ LEFT JOIN	[Livedb].[dbo].[AdmPatDischargePlanFormQueries]										AS FU273		ON 
 LEFT JOIN	[Livedb].[dbo].[AdmPatDischargePlanFormQueries]										AS FU373		ON AV.VisitID=FU373.VisitID AND FU373.QueryID='MHUFU3.7.3' AND RXMORD.OrderSeq = '3'
 LEFT JOIN	[Livedb].[dbo].[AdmPatDischargePlanFormQueries]										AS FU473		ON AV.VisitID=FU473.VisitID AND FU473.QueryID='MHUFU4.7.3' AND RXMORD.OrderSeq = '4'
 LEFT JOIN	[Livedb].[dbo].[AdmPatDischargePlanFormQueries]										AS FU573		ON AV.VisitID=FU573.VisitID AND FU573.QueryID='MHUFU5.7.3' AND RXMORD.OrderSeq = '5'
+LEFT JOIN	[Livedb].[dbo].[AdmPatDischargePlanFormQueries]										AS TS4			ON BV.VisitID=TS4.VisitID AND TS4.QueryID='MHUTS4'	
 
 WHERE BV.DischargeDateTime > '2018-07-01'
 
